@@ -6,7 +6,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Ephraimimmanuel/fullstack-devops-app.git'
+                git branch: 'main',
+                url: 'https://github.com/Ephraimimmanuel/fullstack-devops-app.git'
             }
         }
 
