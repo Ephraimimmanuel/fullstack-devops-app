@@ -37,7 +37,7 @@ pipeline {
         stage('Copy To EC2') {
             steps {
                 bat '''
-                ssh -i "C:\Users\ephra\Downloads\ephraim-frontend-app.pem" ubuntu@ec2-3-110-193-157.ap-south-1.compute.amazonaws.com
+                ssh -i "C:/Users/ephra/Downloads/ephraim-frontend-app.pem" ubuntu@ec2-3-110-193-157.ap-south-1.compute.amazonaws.com
                 '''
             }
         }
@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy Backend') {
             steps {
                 bat '''
-                ssh -i "C:\Users\ephra\Downloads\ephraim-frontend-app.pem" ubuntu@3.110.193.157 "
+                ssh -i "C:/Users/ephra/Downloads/ephraim-frontend-app.pem" ubuntu@3.110.193.157 "
                 docker stop backend || true &&
                 docker rm backend || true &&
                 docker load < backend.tar &&
