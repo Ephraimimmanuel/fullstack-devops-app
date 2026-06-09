@@ -13,10 +13,11 @@ pipeline {
 
         stage('Deploy Frontend To S3') {
             steps {
-                withAWS(credentials: 'aws-creds', region: 'ap-south-1')
+                withAWS(credentials: 'aws-creds', region: 'ap-south-1'){
                 bat '''
                 aws s3 sync frontend s3://ephraim-fullstack-frontend --delete
                 '''
+                }
             }
         }
 
